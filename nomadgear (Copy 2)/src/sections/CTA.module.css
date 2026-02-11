@@ -1,0 +1,112 @@
+.cta {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary-green);
+    overflow: hidden;
+}
+
+.cta__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3a5a40 0%, #588157 50%, #3a5a40 100%);
+    z-index: 0;
+    transition: filter var(--duration-micro) ease;
+}
+
+.cta__background.blurred {
+    filter: blur(10px);
+}
+
+.cta__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 var(--spacing-md);
+}
+
+.cta__title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.cta__description {
+    font-size: 1.2rem;
+    color: var(--color-beige);
+    font-family: var(--font-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+}
+
+.cta__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.cta__input {
+    padding: 1.2rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    transition: all var(--duration-micro) ease;
+}
+
+.cta__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cta__input:focus {
+    outline: none;
+    border-color: var(--color-beige);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cta__submit {
+    padding: 1.2rem 2rem;
+    background: var(--color-beige);
+    color: var(--color-dark-green);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--duration-micro) var(--ease-custom-expo);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta__submit:hover {
+    background: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta__submit:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .cta__title {
+        font-size: 2rem;
+    }
+
+    .cta__form {
+        width: 100%;
+    }
+}
